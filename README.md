@@ -19,4 +19,4 @@
 <br>
 1.[Proje Planı](https://github.com/kaymal "Proje Planı")
 <br>
-2.[Gereksinim Analizi](https://github.com/kaymal "Gereksinim Analizi")
+2.[Gereksinim Analizi](gereksinim_analizi.md "Gereksinim Analizi")
