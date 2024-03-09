@@ -8,7 +8,7 @@
 **Referans Uygulama:** Medium 
 <br>
 <br>
-**Uygulama Adresi:** medium.com
+**Uygulama Adresi:** [medium.com](https://medium.com)
 <br>
 <br>
 **Grup Adı:** MindStorm
