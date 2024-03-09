@@ -35,6 +35,6 @@
 <br>
 <br>
 ## Gereksinim Dağılımları
-1.[Sedanur Ceylan'ın Gereksinimleri](sedanur_ceylan_gereksinim.md)
+1.[Sedanur Ceylan'ın Gereksinimleri](Sedanur_Ceylan_Gereksinim.md)
 <br>
 1.[Zehra Hatipoğlu'nun Gereksinimleri](https://github.com/kaymal)
