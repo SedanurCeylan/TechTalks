@@ -17,5 +17,6 @@
 **Proje Ekibi:** Sedanur Ceylan, Zehra Hatipoğlu
 <br>
 <br>
-1.[Başlıklı Bağlantı](https://github.com/kaymal "Proje Planı")
-2.[Başlıklı Bağlantı](https://github.com/kaymal "Gereksinim Analizi")
+1.[Proje Planı](https://github.com/kaymal "Proje Planı")
+<br>
+2.[Gereksinim Analizi](https://github.com/kaymal "Gereksinim Analizi")
