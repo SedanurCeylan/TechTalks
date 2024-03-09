@@ -19,4 +19,4 @@
 <br>
 1. [Proje Planı](proje_planı.md)
 <br>
-2. [Gereksinim Analizi](gereksinim_analizi.md)
+2.[Gereksinim Analizi](gereksinim_analizi.md)
