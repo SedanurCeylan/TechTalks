@@ -20,3 +20,7 @@
 1.[Proje Planı](Proje_plani.xlsx "Proje Planı")
 <br>
 2.[Gereksinim Analizi](gereksinim_analizi.md "Gereksinim Analizi")
+<br>
+3.[Durum Diyagramı](durum_diyagramı.md "Durum Diyagramı")
+<br>
+4.[Durum Senaryoları](durum_senaryoları.md "Durum Senaryoları")
