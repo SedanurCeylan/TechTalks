@@ -1,3 +1,3 @@
 <h1>Durum Senaryoları</h1>
 
-1. [Sedanur Ceylan Durum Senaryoları](sedanur_ceylan_durum_senaryoları "Sedanur Ceylan Durum Senaryoları")
+1. [Sedanur Ceylan Durum Senaryoları](Sedanur_Ceylan_Durum_Senaryoları.pdf "Sedanur Ceylan Durum Senaryoları")
