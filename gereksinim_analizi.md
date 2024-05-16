@@ -3,7 +3,7 @@
 
 1.Kayıt Ol(Sedanur Ceylan)
 <br>
-2.Giriş Yap(Zehra Hatipoğlu)
+2.Giriş Yap(Sedanur Ceylan)
 <br>
 3.Çıkış Yap(Sedanur Ceylan)
 <br>
