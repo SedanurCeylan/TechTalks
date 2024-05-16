@@ -9,7 +9,7 @@
 <br>
 4.Makale Oluşturma(Zehra Hatipoğlu)
 <br>
-5.Makale Düzenleme(Sedanur Ceylan)
+5.Arama(Zehra Hatipoğlu)
 <br>
 6.Makale Silme(Zehra Hatipoğlu)
 <br>
@@ -17,7 +17,7 @@
 <br>
 8.Makale Beğenme(Zehra Hatipoğlu)
 <br>
-9.Arama(Sedanur Ceylan)
+9.Makale Düzenleme(Sedanur Ceylan)
 <br>
 10.Takip(Zehra Hatipoğlu)
 <br>
