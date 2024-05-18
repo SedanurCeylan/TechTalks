@@ -13,11 +13,11 @@
 <br>
 6.Makale Formatlama Aracı(Sedanur Ceylan)
 <br>
-7.Yorum Oluşturma(Sedanur Ceylan)
+7.Makale Düzenleme(Sedanur Ceylan)
 <br>
 8.Makale Beğenme(Zehra Hatipoğlu)
 <br>
-9.Makale Düzenleme(Sedanur Ceylan)
+9.Yorum Oluşturma(Sedanur Ceylan)
 <br>
 10.Takip(Zehra Hatipoğlu)
 <br>
