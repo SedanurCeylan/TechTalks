@@ -11,7 +11,7 @@
 <br>
 5.Arama(Zehra Hatipoğlu)
 <br>
-6.Makale Silme(Zehra Hatipoğlu)
+6.Makale Formatlama Aracı(Sedanur Ceylan)
 <br>
 7.Yorum Oluşturma(Sedanur Ceylan)
 <br>
@@ -29,7 +29,7 @@
 <br>
 14.Favorileme Özelliği(Zehra Hatipoğlu)
 <br>
-15.Makale Formatlama Aracı(Sedanur Ceylan)
+15.Makale Silme(Zehra Hatipoğlu)
 <br>
 16.Makale Paylaşma(Zehra Hatipoğlu)
 <br>
