@@ -15,7 +15,7 @@
 <br>
 7.Makale Düzenleme(Sedanur Ceylan)
 <br>
-8.Makale Beğenme(Zehra Hatipoğlu)
+8.Makale Paylaşma(Zehra Hatipoğlu)
 <br>
 9.Yorum Oluşturma(Sedanur Ceylan)
 <br>
@@ -31,7 +31,7 @@
 <br>
 15.Makale Silme(Zehra Hatipoğlu)
 <br>
-16.Makale Paylaşma(Zehra Hatipoğlu)
+16.Makale Beğenme(Zehra Hatipoğlu)
 <br>
 <br>
 ## Gereksinim Dağılımları
