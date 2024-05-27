@@ -9,14 +9,64 @@ import './new_story.css'
 import { ImageUpload } from '@/actions/cloudnary'
 import hljs from 'highlight.js'
 import "highlight.js/styles/github.css"
+import axios from 'axios'
+import { constants } from 'buffer'
+import { getStoryById } from '@/actions/getStories'
+import { Story } from '@prisma/client'
 
-type Props = {}
 
-const NewStory = (props: Props) => {
+
+
+type Props = {
+    storyId:string
+    Storycontent: string | null |undefined
+}
+
+const NewStory = ({storyId, Storycontent}: Props) => {
     const contentEditableRef = useRef<HTMLDivElement | null>(null)
     const [openTools, setOpenTools] = useState<boolean>(false)
     const [buttonPosition, setbuttonPosition] = useState<{ top: number, left: number }>({ top: 0, left: 0 })
+    const [saving, setSaving] = useState<boolean>(false)
     const fileInputRef = useRef<HTMLInputElement | null>(null)
+
+    function debounce<T extends(...args: any[]) =>any>(func: T,
+    delay: number): (...args: Parameters<T>) => void {
+         let timeoutId: ReturnType<typeof setTimeout>;
+
+         return function (this: ThisParameterType<T>, ...args:
+         Parameters<T>): void{
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(() => {
+                func.apply(this, args);
+            }, delay);
+         };
+    }
+
+    const debouncedHandleSave = useRef(
+        debounce(() =>{
+            handleSave();
+            
+        }, 1000)
+    ).current;
+
+    const handleSave = async () => {
+        const content = contentEditableRef.current?.innerHTML
+        setSaving(true)
+
+        try{
+            await axios.patch('/api/new-story',{
+                storyId,
+                content
+            })
+            console.log('saved')
+
+        }catch(error){
+            console.log('Error in saving')
+
+        }
+        setSaving(false)
+    }
+    
 
     const InsertImageComp = () => {
         fileInputRef.current?.click()
@@ -29,7 +79,7 @@ const NewStory = (props: Props) => {
 
             const localImageUrl = URL.createObjectURL(file)
 
-            const ImageComponent = <ImageComp imageUrl={localImageUrl} file={file} />
+            const ImageComponent = <ImageComp imageUrl={localImageUrl} file={file} handleSave={handleSave} />
 
             if (typeof document !== 'undefined') {  // Ekleme 1
                 const wrapperDiv = document.createElement('div')
@@ -49,11 +99,13 @@ const NewStory = (props: Props) => {
             const root = createRoot(wrapperDiv)
             root.render(DividerComp)
             contentEditableRef.current?.appendChild(wrapperDiv)
+            handleSave()
         }
     }
 
     const InserCodeBlock = () => {
-        const CoodeBlockComp = <CodeBlock />
+        const CoodeBlockComp = <CodeBlock  handleSave=
+        {debouncedHandleSave}/>
         setOpenTools(false)
         if (typeof document !== 'undefined') {  // Ekleme 3
             const wrapperDiv = document.createElement('div')
@@ -87,6 +139,8 @@ const NewStory = (props: Props) => {
         const handleInput = () => {
             const { x, y } = getCaretPosition()
             setbuttonPosition({ top: y, left: -50 })
+
+            debouncedHandleSave()
         }
         contentEditableRef.current?.addEventListener('input', handleInput)
     }, [])
@@ -105,9 +159,13 @@ const NewStory = (props: Props) => {
         }
     }, [])
 
-    console.log(buttonPosition)
+    
+    
+
     return (
-        <main id='container' className='max-w-[800px] mx-auto relative font-mono mt-5'>
+        <main id='container' className='max-w-[800px] mx-auto relative font-mono mt-8'>
+            <p className='absolute -top-[72px] opacity-30'>{saving ?
+            "saving...":"saved"}</p>
             <div
                 id='editable'
                 ref={contentEditableRef}
@@ -116,9 +174,25 @@ const NewStory = (props: Props) => {
                 className='outline-none focus:outline-none editable max-w-[800px] prose'
                 style={{ whiteSpace: 'pre' }}
             >
-                <h1 className='font-medium' data-h1-placeholder='New Story Title'></h1>
-                <p data-p-placeholder='Write Your Story...'></p>
-                <Divider />
+                { Storycontent ? (
+                    <>
+                        <div dangerouslySetInnerHTML=
+                        {{__html:Storycontent}}></div>
+                    
+                    </>
+
+                ):(
+                    <>
+                        <h1 className='font-medium'
+                        data-h1-placeholder='New Story Title'></h1>
+                        <p data-p-placeholder='Write Your Story...'></p>
+                
+
+
+                    </>
+
+                )}
+                
             </div>
             <div className={`z-10 ${buttonPosition.top === 0 ? "hidden" : ""}`} style={{ position: 'absolute', top: buttonPosition.top, left: buttonPosition.left }}>
                 <button onClick={() => setOpenTools(!openTools)}
@@ -160,7 +234,8 @@ const NewStory = (props: Props) => {
 
 export default NewStory
 
-const ImageComp = ({ imageUrl, file }: { imageUrl: string, file: File }) => {
+const ImageComp = ({ imageUrl, file, handleSave }: { imageUrl: string, 
+file: File, handleSave: () => void }) => {
     const [currentImageUrl, setCurrentImageUrl] = useState<string>(imageUrl)
 
     const updateImageUrl = async () => {
@@ -176,7 +251,9 @@ const ImageComp = ({ imageUrl, file }: { imageUrl: string, file: File }) => {
     }
 
     useEffect(() => {
-        updateImageUrl()
+        updateImageUrl().then(() => {
+            handleSave()
+        })
     }, [imageUrl])
 
     return (
@@ -209,7 +286,7 @@ const Divider = () => {
 }
 
 
-const CodeBlock = () => {
+const CodeBlock = ({handleSave}: {handleSave:() => void}) => {
     const [language, setLanguage] = useState<string>('javascript')
     const [code, setCode] = useState<string>('')
     const [highlightedCode, sethighlightedCode] = useState<string>('')
@@ -239,11 +316,12 @@ const CodeBlock = () => {
             ignoreIllegals: true
         }).value
         sethighlightedCode(highlighted)
+        handleSave()
     }, [language, code, highlightedCode])
 
     return (
         <div className='w-full'>
-            <div className='prose w-full relative bg-gray-50 rounded-sm p-5 
+            <div className='w-full relative bg-gray-50 rounded-sm p-5 
             focus:outline-none'>
                 <div>
                     <select
@@ -274,6 +352,7 @@ const CodeBlock = () => {
 
                 </div>
             </div>
+            <p data-p-placeholder='Write Your Text...'></p>
         </div>
     )
 }
