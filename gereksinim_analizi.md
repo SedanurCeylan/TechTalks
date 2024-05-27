@@ -17,9 +17,9 @@
 <br>
 8.Makale Paylaşma(Zehra Hatipoğlu)
 <br>
-9.Yorum Oluşturma(Sedanur Ceylan)
+9.Makale Beğenme(Zehra Hatipoğlu)
 <br>
-10.Takip(Zehra Hatipoğlu)
+10.Yorum Oluşturma(Sedanur Ceylan)
 <br>
 11.Bildirimler(Sedanur Ceylan)
 <br>
@@ -31,7 +31,7 @@
 <br>
 15.Makale Silme(Zehra Hatipoğlu)
 <br>
-16.Makale Beğenme(Zehra Hatipoğlu)
+16.Takip(Zehra Hatipoğlu)
 <br>
 <br>
 ## Gereksinim Dağılımları
