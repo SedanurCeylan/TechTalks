@@ -6,6 +6,7 @@ import ClapComponent from "./ClapComponent";
 import CommentComponent from "./CommentComponent";
 import SaveComponent from "./SaveComponent";
 import ShareComponent from "./ShareComponent";
+import { ClapCount, ClapCountByUser } from "@/actions/Clap";
 
 type Props ={
     AuthorFirstName:string | null
@@ -15,7 +16,7 @@ type Props ={
 
 }
 
-const RenderStory = ({AuthorFirstName, AuthorImage,
+const RenderStory = async ({AuthorFirstName, AuthorImage,
 AuthorLastName,PublishedStory}: Props) => {
 
     const stripHtmlTags = (htmlString:string) => {
@@ -25,6 +26,10 @@ AuthorLastName,PublishedStory}: Props) => {
     const h1match =PublishedStory.content!.match(/<h1[^>]*>([\s\S]*?)<\/h1>/);
     const h1Element =h1match ? h1match[1] : "";
     const h1elementwithouttag = stripHtmlTags(h1Element)
+
+    const clapCounts =await ClapCount (PublishedStory.id)
+
+    const UserClaps = await ClapCountByUser(PublishedStory.id)
     return (
         <div className="flex items-center justify-center mt-6 max-w-
         [800px] mx-auto">
@@ -45,9 +50,10 @@ AuthorLastName,PublishedStory}: Props) => {
                     </div>
                 </div>
                 <div className="border-y-[1px] border-neutral-200
-                py-3 mt-6 flex items-center justify-center px-3">
+                py-3 mt-6 flex items-center justify-between px-3">
                     <div className="flex items-center space-x-4">
-                        <ClapComponent/>
+                        <ClapComponent storyId={PublishedStory.id}
+                        ClapCount={clapCounts} UserClaps={UserClaps}/>
                         <CommentComponent/>
                     </div>
                     <div className="flex items-center space-x-4">
