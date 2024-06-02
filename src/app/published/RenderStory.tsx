@@ -11,6 +11,7 @@ import { getCurrentuser } from "@/actions/User";
 import { NumberOfComments } from "@/actions/Comments";
 import { CheckSaved } from "@/actions/Save";
 import FollowComponent from "./FollowComponent";
+import "highlight.js/styles/github.css"
 
 type Props = {
     AuthorFirstName: string | null;
@@ -38,6 +39,15 @@ const RenderStory = async ({ AuthorFirstName, AuthorImage, AuthorLastName, Publi
 
     const SavedStatus = await CheckSaved(PublishedStory.id);
     console.log(SavedStatus);
+
+    const content =PublishedStory.content!;
+    const firstH1Match = content.match(/<h1[^>]*>[\s\S]*?<\/h1>/);
+    const sanitizedContent =firstH1Match
+    ? content.replace(firstH1Match[0],'')
+    : content;
+    const finalSanitizedContent = sanitizedContent.replace(/<h1[^>]*>[\s\S]*?<\/h1>|<select[^>]*>[\s\S]*?<\/select>|<textarea[^>]*>[\s\S]*?<\/textarea>/gi,'');
+
+    
     return (
         <div className="flex items-center justify-center mt-6 w-full mx-auto max-w-[1000px]">
             <div className="w-full">
@@ -60,7 +70,7 @@ const RenderStory = async ({ AuthorFirstName, AuthorImage, AuthorLastName, Publi
                     <div className="flex items-center space-x-4">
                         <ClapComponent storyId={PublishedStory.id} ClapCount={clapCounts ?? 0} UserClaps={UserClaps} />
                         <CommentComponent
-                            NumberCommnets={NumberCommnets.reponse ? NumberCommnets.reponse : 0}
+                            NumberCommnets={NumberCommnets.response ? NumberCommnets.response : 0}
                             AuthorFirstName={CurrentUser.firstName}
                             AuthorImage={CurrentUser.imageUrl}
                             AuthorLastName={CurrentUser.lastName}
@@ -74,6 +84,8 @@ const RenderStory = async ({ AuthorFirstName, AuthorImage, AuthorLastName, Publi
                         </button>
                     </div>
                 </div>
+                <div className="prose my-5 font-mono"
+                dangerouslySetInnerHTML={{__html:finalSanitizedContent}}></div>
             </div>
         </div>
     );

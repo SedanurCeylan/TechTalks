@@ -22,3 +22,19 @@ export const CheckFollowing = async (authorId:string) => {
         
     }
 }
+export const NumberFollowers =   async (authorId:string) => {
+    try {
+        const NoOfFollowing = await prisma.following.aggregate({
+            where:{
+                followingId:authorId
+            },
+            _count:true
+        })
+        return {followers: JSON.parse(JSON.stringify(NoOfFollowing._count))}
+        
+    } catch (error) {
+        return {followers:0}
+        
+    }
+
+}

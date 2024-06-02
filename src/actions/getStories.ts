@@ -9,7 +9,8 @@ export const getStoryById = async (storyId:string) => {
     try {
         const StoryById = await prisma.story.findUnique({
             where:{
-                id:storyId
+                id:storyId,
+                publish:false
             }
         })
         return {response : StoryById}
@@ -39,5 +40,23 @@ export const getPublishedStoryById = async (storyId:string) => {
     }catch(error){
         return {error:'Error on getting the story by Id'}
 
+    }
+}
+export const getStoriesByAuthor = async (storyId:string, authorId:string)=> {
+    try {
+        const AuthorStories = await prisma.story.findMany({
+            where:{
+                authorId,
+                NOT:{
+                    id:storyId
+                },
+                publish:true
+            }
+        })
+        return{response:AuthorStories}
+        
+    } catch (error) {
+        return {error:"Error on getting stories by author"}
+        
     }
 }

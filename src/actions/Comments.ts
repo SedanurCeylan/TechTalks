@@ -48,7 +48,7 @@ export const NumberOfComments = async (storyId:string)=> {
             _count:true
         })
 
-        return {reponse: commentsNo._count || 0}
+        return {response: commentsNo._count || 0}
     } catch (error) {
         return {error: "Error getting number of comments"}
     }

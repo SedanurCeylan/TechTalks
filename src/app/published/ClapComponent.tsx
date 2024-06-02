@@ -70,7 +70,7 @@ UserClaps}:Props) => {
  
     
     return (
-        <button onClick={ClapStoryorComment} className="flex
+        <button onClick= {(e) => {e.preventDefault(); ClapStoryorComment()}} className="flex
         items-center relative">
             <span className={`absolute bottom-10 w-[40px] h-[40px]
             bg-black rounded-full shadow-2xl shadow-neutral-300
