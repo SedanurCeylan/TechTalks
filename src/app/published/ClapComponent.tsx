@@ -1,4 +1,4 @@
-'use client'
+"use client"
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 //import { clearTimeout } from "timers";
@@ -15,7 +15,7 @@ const ClapComponent =({storyId, ClapCount, commentId,
 UserClaps}:Props) => {
     const [currentClaps, setCurrentClaps] = useState<number>(ClapCount)
     const [currentClapByUser, setCurrentClapByUser]= useState<number>(UserClaps)
-    const [showPopup, setShowPopup] = useState<boolean>(false)
+    const [showPopup, setShowPopUp] = useState<boolean>(false)
 
 
 
@@ -24,7 +24,7 @@ UserClaps}:Props) => {
     useEffect(() => {
         if (showPopup) {
             const timeout = setTimeout(() => {
-                setShowPopup(false);
+                setShowPopUp(false);
             }, 1000);
             return () => clearTimeout(timeout);
         }
@@ -38,12 +38,12 @@ UserClaps}:Props) => {
 
     const ClapStoryorComment = async () => {
         if(currentClapByUser >= 50){
-            setShowPopup(true)
+            setShowPopUp(true)
             return
         }
         setCurrentClapByUser((prev)=> prev + 1)
         setCurrentClaps((prev)=> prev + 1)
-        setShowPopup(true)
+        setShowPopUp(true)
 
         try{
             if(!commentId){
