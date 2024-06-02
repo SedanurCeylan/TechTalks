@@ -1,37 +1,37 @@
 # Gereksinim Analizi
 ## Gereksinimler 
 <br>
-1.Kayıt Ol(Sedanur Ceylan)
+1.Kayıt Ol(Sedanur Ceylan)+
 <br>
-2.Giriş Yap(Sedanur Ceylan)
+2.Giriş Yap(Sedanur Ceylan)+
 <br>
-3.Çıkış Yap(Sedanur Ceylan)
+3.Çıkış Yap(Sedanur Ceylan)+
 <br>
-4.Makale Düzenleme(Sedanur Ceylan)
+4.Makale Düzenleme(Sedanur Ceylan)+
 <br>
-5.Yorum Oluşturma(Sedanur Ceylan)
+5.Yorum Oluşturma(Sedanur Ceylan)+
 <br>
-6.Favorileme Özelliği(Sedanur Ceylan)
+6.Favorileme Özelliği(Sedanur Ceylan)+
 <br>
-7.Makale Formatlama Aracı(Sedanur Ceylan)
+7.Makale Formatlama Aracı(Sedanur Ceylan)+
 <br>
-8.Makale Oluşturma(Zehra Hatipoğlu)
+8.Makale Oluşturma(Zehra Hatipoğlu)+
 <br>
-9.Arama(Zehra Hatipoğlu)
+9.Arama(Zehra Hatipoğlu)+
 <br>
-10.Makale Paylaşma(Zehra Hatipoğlu)
+10.Makale Paylaşma(Zehra Hatipoğlu)+
 <br>
-11.Makale Beğenme(Zehra Hatipoğlu)
+11.Makale Beğenme(Zehra Hatipoğlu)+
 <br>
-12.Takip(Zehra Hatipoğlu)
+12.Takip(Zehra Hatipoğlu)+
 <br>
-13.Profil Düzenleme(Zehra Hatipoğlu)
+13.Profil Düzenleme(Zehra Hatipoğlu)+
 <br>
 14.Makale Silme(Zehra Hatipoğlu)
 <br>
-15.Makale İstatistiği(belirsiz)
+15.Yazara Mail Gönderme(Zehra Hatipoğlu)+
 <br>
-16.Bildirimler(belirsiz)
+16.Bildirimler(Sedanur Ceylan)
 <br>
 <br>
 
