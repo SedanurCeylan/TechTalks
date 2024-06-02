@@ -21,13 +21,13 @@
 <br>
 10.Yorum Oluşturma(Sedanur Ceylan)
 <br>
-11.Bildirimler(Sedanur Ceylan)
+11.Favorileme Özelliği(Sedanur Ceylan)
 <br>
-12.Makale İstatistiği(Zehra Hatipoğlu)
+12.Makale İstatistiği(Sedanur Ceylan)
 <br>
 13.Profil Düzenleme(Sedanur Ceylan)
 <br>
-14.Favorileme Özelliği(Zehra Hatipoğlu)
+14.Bildirimler(Sedanur Ceylan)
 <br>
 15.Makale Silme(Zehra Hatipoğlu)
 <br>
