@@ -22,7 +22,9 @@
 10.Makale Paylaşma(Zehra Hatipoğlu)
 <br>
 11.Makale Beğenme(Zehra Hatipoğlu)
-12.Takip()
+<br>
+12.Takip(Zehra Hatipoğlu)
+<br>
 13.Profil Düzenleme(Zehra Hatipoğlu)
 <br>
 14.Makale Silme(Zehra Hatipoğlu)
