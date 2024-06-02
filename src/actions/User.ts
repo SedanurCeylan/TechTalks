@@ -3,7 +3,7 @@ import { auth } from "@clerk/nextjs/server";
 import { clerkClient } from "@clerk/nextjs/server";
 
 
-export const getCurrentUserId = () => {
+export const getCurrentUserId = async () => {
     const {userId} = auth()
     return userId
 }
