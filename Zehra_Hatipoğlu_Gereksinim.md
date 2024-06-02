@@ -13,4 +13,4 @@
 <br>
 7.Favorileme Özelliği= Kullanıcıların makaleleri favorilere ekleyebilme ve daha sonra erişebilme yeteneği, içerikleri kolayca bulmalarını sağlar. Bu özellik, kullanıcıların ilginç buldukları içerikleri kaydetmelerine ve daha sonra tekrar göz atmalarına olanak tanır.
 <br>
-8.Makale Paylaşma= Kullanıcıların yazdıkları makaleleri sosyal medyada paylaşabilme özelliği, içeriğin daha geniş bir kitleye ulaşmasını sağlar. Bu, kullanıcıların kendi içeriklerini tanıtmalarına ve paylaşmalarına olanak tanır, böylece daha fazla okuyucuya erişebilirler.
+8.Makale Paylaşma= Kullanıcıların yazdıkları içeriğin linkini paylaşmasını ve daha geniş bir kitleye ulaşmasını sağlar. Bu, kullanıcıların kendi içeriklerini tanıtmalarına ve paylaşmalarına olanak tanır, böylece daha fazla okuyucuya erişebilirler.
