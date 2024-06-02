@@ -16,7 +16,7 @@ commentId?:string) => {
                     clapCount:true
                 }
             })
-            return Clap._sum?.clapCount || 0;
+            return 
         }
 
         const Clap = await prisma.clap.aggregate({
@@ -55,7 +55,7 @@ commentId?:string) => {
                         clapCount:true
                     }
                 })
-                return Clap._sum?.clapCount || 0;
+                return JSON.parse(JSON.stringify (Clap._sum?.clapCount || 0)) ; /////////////////
             }
     
             const Clap = await prisma.clap.aggregate({
@@ -69,7 +69,8 @@ commentId?:string) => {
                     clapCount:true
                 }
             })
-            return Clap._sum?.clapCount || 0;
+            return JSON.parse(JSON.stringify (Clap._sum?.clapCount || 0)) ;
+            
     
         }catch(error){
             return 0

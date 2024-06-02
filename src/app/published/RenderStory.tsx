@@ -7,6 +7,9 @@ import CommentComponent from "./CommentComponent";
 import SaveComponent from "./SaveComponent";
 import ShareComponent from "./ShareComponent";
 import { ClapCount, ClapCountByUser } from "@/actions/Clap";
+import { getCurrentuser } from "@/actions/User";
+import { NumberOfComments } from "@/actions/Comments";
+import { CheckSaved } from "@/actions/Save";
 
 type Props ={
     AuthorFirstName:string | null
@@ -30,6 +33,13 @@ AuthorLastName,PublishedStory}: Props) => {
     const clapCounts =await ClapCount (PublishedStory.id)
 
     const UserClaps = await ClapCountByUser(PublishedStory.id)
+
+    const CurrentUser = await getCurrentuser()
+
+    const NumberCommnets = await NumberOfComments(PublishedStory.id)
+
+    const SavedStatus = await CheckSaved(PublishedStory.id)
+    console.log(SavedStatus)
     return (
         <div className="flex items-center justify-center mt-6 max-w-
         [800px] mx-auto">
@@ -49,15 +59,19 @@ AuthorLastName,PublishedStory}: Props) => {
                         ().split(' ').slice(1,4).join(' ')}</p>
                     </div>
                 </div>
-                <div className="border-y-[1px] border-neutral-200
-                py-3 mt-6 flex items-center justify-between px-3">
+                <div className="border-y-[1px] border-neutral-200 py-3 mt-6 flex items-center justify-between px-3">
                     <div className="flex items-center space-x-4">
                         <ClapComponent storyId={PublishedStory.id}
-                        ClapCount={clapCounts} UserClaps={UserClaps}/>
-                        <CommentComponent/>
+                        ClapCount={clapCounts ?? 0} UserClaps={UserClaps}/>
+                        <CommentComponent NumberCommnets=
+                        {NumberCommnets.reponse ? NumberCommnets.reponse : 0} 
+                        AuthorFirstName={CurrentUser.firstName} 
+                        AuthorImage={CurrentUser.imageUrl} 
+                        AuthorLastName={CurrentUser.lastName}/>
                     </div>
                     <div className="flex items-center space-x-4">
-                        <SaveComponent/>
+                        <SaveComponent storyId={PublishedStory.id}
+                        SavedStatus={SavedStatus.Status}/>
                         <ShareComponent/>
                         <button>
                             <MoreHorizontal size={24}

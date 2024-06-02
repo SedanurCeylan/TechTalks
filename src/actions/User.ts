@@ -12,11 +12,11 @@ export const getCurrentuser = async () => {
     const {userId} = auth()
     if(!userId) throw new Error ('No current user found')
     const User = await clerkClient.users.getUser(userId)
-    return User
+    return JSON.parse(JSON.stringify(User))
 }
 
 export const getuser = async (userId:string) => {
     if(!userId) throw new Error ('No current user found')
     const User = await clerkClient.users.getUser(userId)
-    return User
+    return JSON.parse(JSON.stringify(User))
 }
