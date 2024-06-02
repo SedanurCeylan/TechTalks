@@ -1,1 +1,1 @@
-
+Next.js çatısı kullanıldı 
