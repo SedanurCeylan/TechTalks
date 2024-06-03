@@ -63,3 +63,9 @@ model Following {
 
 
 }
+
+model Topics {
+  id        String  @id @default(dbgenerated("concat('following_', replace(cast(gen_random_uuid() as text), '-', ''))")) @db.Text
+  userId String
+  selectedTopics String[]
+}

@@ -60,3 +60,48 @@ export const getStoriesByAuthor = async (storyId:string, authorId:string)=> {
         
     }
 }
+
+export const getUniqueTopics = async () =>{
+    try {
+        const AllStoryTopics = await prisma.story.findMany({
+            select:{
+                topics:true
+            }
+        })
+        const uniqueTopics = Array.from(new Set(AllStoryTopics.flatMap((item)=> item.topics)))
+
+        const formattedData = uniqueTopics.map(topic =>({
+            value:topic,
+            label:topic
+        }))
+        return {response: formattedData}
+
+    } catch (error) {
+        return {response:[]}
+    }
+}
+
+export const getStoryByTag = async (tag:string) => {
+    try {
+        if (tag == 'All') {
+            const AllStories = await prisma.story.findMany({
+                where:{
+                    publish:true
+                }
+            })
+            return {stories : AllStories}
+        }
+        const taggedStories = await prisma.story.findMany({
+            where:{
+                topics:{
+                    has:tag
+                },
+                publish:true
+            }
+        })
+        return {stories : taggedStories}
+    } catch (error) {
+        return {stories : []}
+        
+    }
+}

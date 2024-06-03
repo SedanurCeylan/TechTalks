@@ -59,7 +59,7 @@ UserClaps}:Props) => {
             console.log('success')
 
         }catch(error){
-            console.log('Error while clapping story or comment',Error)
+            console.log('Error while clapping story or comment',error)
             setCurrentClaps((prev) => prev -1)
             setCurrentClapByUser((prev)=> prev -1)
 

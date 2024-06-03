@@ -175,7 +175,7 @@ const StoryPage = ({ stories, TotalDrafts, TotalPublished, TotalSaved }: Props) 
 
 export default StoryPage
 
-const AuthorDetail = ({story}:{story:Story}) => {
+ export const AuthorDetail = ({story}:{story:Story}) => {
     const [user,setuser] = useState<User>()
 
     useEffect(() => {

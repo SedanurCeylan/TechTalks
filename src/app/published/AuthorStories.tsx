@@ -61,6 +61,8 @@ const AuthorStories = ({ story, AuthorFirstName, AuthorImage, AuthorLastName }: 
         
     }, [story.id])
 
+    
+
     const stripHtmlTags = (htmlString: string) => {
         return htmlString.replace(/<[^>]*>/g, '');
     };
@@ -78,7 +80,7 @@ const AuthorStories = ({ story, AuthorFirstName, AuthorImage, AuthorLastName }: 
                 <Image src={AuthorImage} width={20} height={20} alt='User' />
                 <p className='text-xs font-medium'>{AuthorFirstName} {AuthorLastName}</p>
             </div>
-            <p className='font-bold mt-4'>{h1Element}</p>
+            <p className='font-bold mt-4'>{finalh1Element}</p>
             <p className='mt-2 text-sm text-neutral-500'>{first10Words} ...</p>
             <div className='flex items-center justify-between mt-3'>
                 <div className='flex items-center space-x-4'>

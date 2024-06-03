@@ -48,4 +48,4 @@ const SaveComponent =({storyId,SavedStatus}:Props) => {
     )
 }
 
-export default SaveComponent
+export default SaveComponent
