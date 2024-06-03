@@ -1,6 +1,6 @@
 'use client'
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import Image from 'next/image';
 import { UserButton } from "@clerk/nextjs";
 import {Scroll, ScrollText, Search} from "lucide-react"
@@ -10,6 +10,7 @@ import { useRouter } from "next/navigation";
 type Props ={}
 
 const Navbar =(props: Props)=> {
+        const [SearchInput, setSearchInput]= useState<string>('')
         const router = useRouter();
         const MakeNewStory = async () => {
             try {
@@ -23,6 +24,11 @@ const Navbar =(props: Props)=> {
             }
             
         }
+        const SearchFun = (event: React.KeyboardEvent<HTMLInputElement>)=>{
+            if (event.key === 'Enter') {
+                router.push(`/search?for=${SearchInput}`)       
+            }
+        }
     return (
         <div className='px-8 py-2 border-b-[1px]'>
             <div className='flex items-center justify-between'>
@@ -33,8 +39,9 @@ const Navbar =(props: Props)=> {
                 </Link>
                 <div className="flex items-center bg-gray-50
                 rounded-full px-2">
-                    <Search size={20} className='opacity-50' /> 
-                    <input type="text" placeholder="Search..."
+                    <Search onClick={()=>router.push(`/search?for${SearchInput}`)} size={20} className='opacity-50' /> 
+                    <input onChange={(e)=> setSearchInput(e.target.value)} 
+                    onKeyDown={(e)=> SearchFun(e)} type="text" placeholder="Search..."
                     className="focus:outline-none px-1 py-2
                     placeholder:text-sm text-sm bg-gray-50" />
 

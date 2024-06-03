@@ -46,7 +46,7 @@ const RenderStory = async ({ AuthorFirstName, AuthorImage, AuthorLastName, Publi
     ? content.replace(firstH1Match[0],'')
     : content;
     const finalSanitizedContent = sanitizedContent.replace(/<h1[^>]*>[\s\S]*?<\/h1>|<select[^>]*>[\s\S]*?<\/select>|<textarea[^>]*>[\s\S]*?<\/textarea>/gi,'');
-
+    const SaveStatus = await CheckSaved(PublishedStory.id)
     
     return (
         <div className="flex items-center justify-center mt-6 w-full mx-auto max-w-[1000px]">
