@@ -31,7 +31,7 @@
 <br>
 15.Yazara Mail Gönderme(Zehra Hatipoğlu)+
 <br>
-16.Bildirimler(Sedanur Ceylan)
+16.Tag(Sedanur Ceylan)
 <br>
 <br>
 
