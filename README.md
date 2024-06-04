@@ -5,10 +5,10 @@
 **Proje Kategorisi:** Dijital İçerik Platformu
 <br>
 <br>
-**Referans Uygulama:** Medium 
+**Referans Uygulama:** [medium.com](https://medium.com)
 <br>
 <br>
-**Uygulama Adresi:** [medium.com](https://medium.com)
+**Uygulama Adresi(Video Linki):** 
 <br>
 <br>
 **Grup Adı:** MindStorm
