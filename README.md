@@ -8,7 +8,7 @@
 **Referans Uygulama:** [medium.com](https://medium.com)
 <br>
 <br>
-**Uygulama Adresi(Video Linki):** 
+**Uygulama Adresi(Video Linki):** [Youtube Video Linki](https://youtu.be/STc6PLS50so)
 <br>
 <br>
 **Grup Adı:** MindStorm
